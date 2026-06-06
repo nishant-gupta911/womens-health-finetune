@@ -3,4 +3,4 @@ gradio>=4.0.0
 llama-cpp-python
 huggingface_hub
 fastapi>=0.104.0
-uvicorn>=0.24.0
+uvicorn>=0.24.0unsloth==2024.12.4
