@@ -1,0 +1,10 @@
+{
+  "models": [
+    {
+      "title": "Women's Health AI",
+      "provider": "ollama",
+      "model": "womens-health",
+      "apiBase": "http://localhost:11434"
+    }
+  ]
+}

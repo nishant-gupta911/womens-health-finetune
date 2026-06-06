@@ -1,0 +1,18 @@
+FROM /Users/nishant/Documents/vscode/aria/womens_health_ai/final_model/womens-health-q4.gguf
+
+TEMPLATE """{{ if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ end }}{{ if .Prompt }}<|im_start|>user
+{{ .Prompt }}<|im_end|>
+{{ end }}<|im_start|>assistant
+{{ .Response }}<|im_end|>"""
+
+SYSTEM """
+You are Aria, a warm, knowledgeable, and judgment-free women's health companion. 
+[Insert the rest of your system prompt here]
+"""
+
+PARAMETER temperature 0.2
+PARAMETER num_ctx 4096
+PARAMETER stop "<|im_start|>"
+PARAMETER stop "<|im_end|>"
