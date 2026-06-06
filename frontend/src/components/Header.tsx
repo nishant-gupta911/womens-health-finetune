@@ -1,7 +1,9 @@
+import BreathingCircle from "./BreathingCircle";
+
 export default function Header() {
   return (
     <div style={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: "12px" }}>
-      <div style={{ fontSize: "48px", marginBottom: "4px" }}>🌸</div>
+      <BreathingCircle />
       <h1
         style={{
           fontSize: "clamp(28px, 5vw, 42px)",
