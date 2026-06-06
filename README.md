@@ -255,3 +255,5 @@ MIT — use it, build on it, just don't use it to replace actual doctors.
 ## Disclaimer
 
 *Aria provides general health information only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider for personal medical concerns. This tool is for educational purposes.*
+
+<!-- setup guide -->
