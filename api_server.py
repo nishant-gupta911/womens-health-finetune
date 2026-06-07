@@ -42,8 +42,9 @@ try:
     llm = Llama(
         model_path=str(MODEL_PATH),
         n_ctx=2048,
-        n_threads=os.cpu_count() or 4,
-        n_gpu_layers=0,        # set to -1 if you have a GPU
+        n_threads=8,           # Use more threads for prompt processing
+        n_gpu_layers=-1,       # Offload all layers to GPU (Metal)
+        flash_attn=True,       # Further speed up attention calculations
         verbose=False,
     )
     log.info("Model loaded successfully.")
@@ -203,8 +204,9 @@ def stream_response(message: str, history: list) -> Generator[str, None, None]:
             accumulated += delta
 
             # ── Hallucination guard ──────────────────────────────────────
-            acc_lower = accumulated.lower()
-            if any(trigger in acc_lower for trigger in HALLUCINATION_TRIGGERS):
+            # Only check the last 64 chars to keep it fast during streaming
+            check_window = accumulated[-64:].lower()
+            if any(trigger in check_window for trigger in HALLUCINATION_TRIGGERS):
                 log.warning("Hallucination detected — stopping generation early.")
                 break
 

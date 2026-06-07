@@ -1,9 +1,9 @@
-import BreathingCircle from "./BreathingCircle";
+import BlossomIcon from "./BlossomIcon";
 
 export default function Header() {
   return (
     <div style={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: "12px" }}>
-      <BreathingCircle />
+      <BlossomIcon />
       <h1
         style={{
           fontSize: "clamp(28px, 5vw, 42px)",
